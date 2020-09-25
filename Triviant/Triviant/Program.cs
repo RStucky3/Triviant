@@ -5,10 +5,9 @@ namespace Triviant
     class Program
     {
         static int Score = 0;
-        static string Vraag = "Wat is de naam van het tweede deel uit The Matrix trilogie?";
-        static string[] Antwoorden = { "The Matrix Reloaded", "The Matrix Revolutions", "The Matrix", "The Real Matrix" };
-        static int JuisteAntwoord = 0;
-
+        static string[] Vraag = { "Wat is de naam van het tweede deel uit The Matrix trilogie?", "Welke actrice speelde Monica Gellar in de serie Friends?", "", "" };
+        static string[,] Antwoorden = { { "The Matrix Reloaded", "The Matrix Revolutions", "The Matrix", "The Real Matrix" }{ "Jennifer Aniston", "Courteney Cox", "Lisa Kudrow", "David Schwimmer" }} ;
+        static int[] JuisteAntwoord = { 0, 1, 0, 0 };
 
 
         static void Main(string[] args)
@@ -18,34 +17,38 @@ namespace Triviant
             Console.WriteLine("U krijgt vragen te zien en daarbij 4 antwoorden, kiest daarbij het beste antwoord.");
             Console.WriteLine("Klik op enter om te beginnen!");
             Console.ReadLine();
-            showVraag(1);
-            showAntwoorden();
+       
+                showVraag(1);
+                showAntwoorden();
+            
 
-            try { 
-            int Antwoord = Convert.ToInt32(Console.ReadLine());
+                try {
+                    int Antwoord = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine("");
-                switch (checkAntwoord(Antwoord))
+                    Console.WriteLine("");
+                    switch (checkAntwoord(Antwoord))
+                    {
+                        case 1:
+                            Console.WriteLine("Goed gedaan");
+                            Score++;
+                            break;
+                        case 0:
+                            Console.WriteLine("Dat is helaas niet goed. Het antwoord is " + Antwoorden[JuisteAntwoord]);
+                            break;
+                        case 99:
+                            Console.WriteLine("Dit is geen gelde invoer.");
+                            break;
+                    }
+
+                }
+                catch (Exception e)
                 {
-                    case 1:
-                        Console.WriteLine("Goed gedaan");
-                        Score++;
-                        break;
-                    case 0:
-                        Console.WriteLine("Dat is helaas niet goed. Het antwoord is " + Antwoorden[JuisteAntwoord]);
-                        break;
-                    case 99:
-                        Console.WriteLine("Dit is geen gelde invoer.");
-                        break;
+                    Console.WriteLine(e.Message);
                 }
 
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
 
-            Console.WriteLine("Je hebt " + Score + " punt(en).");
+                Console.WriteLine("Je hebt " + Score + " punt(en).");
+
             Console.ReadLine();
         }
 
