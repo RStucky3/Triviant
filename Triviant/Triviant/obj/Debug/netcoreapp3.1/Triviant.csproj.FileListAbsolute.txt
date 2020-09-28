@@ -11,3 +11,16 @@ C:\Users\Student.DESKTOP-NLE9OIH\Desktop\Triviant\Triviant\Triviant\obj\Debug\ne
 C:\Users\Student.DESKTOP-NLE9OIH\Desktop\Triviant\Triviant\Triviant\obj\Debug\netcoreapp3.1\Triviant.dll
 C:\Users\Student.DESKTOP-NLE9OIH\Desktop\Triviant\Triviant\Triviant\obj\Debug\netcoreapp3.1\Triviant.pdb
 C:\Users\Student.DESKTOP-NLE9OIH\Desktop\Triviant\Triviant\Triviant\obj\Debug\netcoreapp3.1\Triviant.genruntimeconfig.cache
+F:\ICTP\Triviant\triviant\Triviant\bin\Debug\netcoreapp3.1\Triviant.exe
+F:\ICTP\Triviant\triviant\Triviant\bin\Debug\netcoreapp3.1\Triviant.deps.json
+F:\ICTP\Triviant\triviant\Triviant\bin\Debug\netcoreapp3.1\Triviant.runtimeconfig.json
+F:\ICTP\Triviant\triviant\Triviant\bin\Debug\netcoreapp3.1\Triviant.runtimeconfig.dev.json
+F:\ICTP\Triviant\triviant\Triviant\bin\Debug\netcoreapp3.1\Triviant.dll
+F:\ICTP\Triviant\triviant\Triviant\bin\Debug\netcoreapp3.1\Triviant.pdb
+F:\ICTP\Triviant\triviant\Triviant\obj\Debug\netcoreapp3.1\Triviant.csprojAssemblyReference.cache
+F:\ICTP\Triviant\triviant\Triviant\obj\Debug\netcoreapp3.1\Triviant.AssemblyInfoInputs.cache
+F:\ICTP\Triviant\triviant\Triviant\obj\Debug\netcoreapp3.1\Triviant.AssemblyInfo.cs
+F:\ICTP\Triviant\triviant\Triviant\obj\Debug\netcoreapp3.1\Triviant.csproj.CoreCompileInputs.cache
+F:\ICTP\Triviant\triviant\Triviant\obj\Debug\netcoreapp3.1\Triviant.dll
+F:\ICTP\Triviant\triviant\Triviant\obj\Debug\netcoreapp3.1\Triviant.pdb
+F:\ICTP\Triviant\triviant\Triviant\obj\Debug\netcoreapp3.1\Triviant.genruntimeconfig.cache
