@@ -4,3 +4,35 @@ goed: The Matrix Reloaded
 Fout: 	The Matrix Revolutions
 	The Matrix
 	The Real Matrix
+
+
+Welke actrice speelde Monica Gellar in de serie Friends?
+
+goed: Courteney Cox
+Fout: 	Jennifer Aniston
+	Lisa Kudrow
+	David Schwimmer
+
+
+Voor welke inlichtingendienst was James Bond een werkzaam?
+
+goed: M16
+Fout: 	FBI
+	AIVD
+	CIA
+
+
+Welk bedrijf maakte als eerst een volledige 3d-animatiefilm?
+
+goed: Pixar
+Fout: 	Disney
+	Dreamworks
+	Apple
+
+
+Uit welk materiaal bestaat een Oscar Award voor 92.5 %?
+
+goed: Tin
+Fout: 	Plastic
+	Lood
+	Ijzer

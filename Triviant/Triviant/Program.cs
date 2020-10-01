@@ -7,9 +7,9 @@ namespace Triviant
     class Program
     {
         static int Score = 0;
-        static string[] Vraag = { "Wat is de naam van het tweede deel uit The Matrix trilogie?", "Welke actrice speelde Monica Gellar in de serie Friends?", "Voor welke inlichtingendienst was James Bond een werkzaam?", "Welk bedrijf maakte als eerst een volledige 3d-animatiefilm?" };
-        static string[,] Antwoorden = { {"The Matrix Reloaded", "The Matrix Revolutions", "The Matrix", "The Real Matrix"}, { "Jennifer Aniston", "Courteney Cox", "Lisa Kudrow", "David Schwimmer" }, { "CIA", "AIVD", "FBI", "MI6" }, { "Disney", "Pixar", "Apple", "Dreamworks" } } ;
-        static int[] JuisteAntwoord = { 0, 1, 3, 1 };
+        static string[] Vraag = { "Wat is de naam van het tweede deel uit The Matrix trilogie?", "Welke actrice speelde Monica Gellar in de serie Friends?", "Voor welke inlichtingendienst was James Bond een werkzaam?", "Welk bedrijf maakte als eerst een volledige 3d-animatiefilm?", "Uit welk materiaal bestaat een Oscar Award voor 92.5 %?" };
+        static string[,] Antwoorden = { {"The Matrix Reloaded", "The Matrix Revolutions", "The Matrix", "The Real Matrix"}, { "Jennifer Aniston", "Courteney Cox", "Lisa Kudrow", "David Schwimmer" }, { "CIA", "AIVD", "FBI", "MI6" }, { "Disney", "Pixar", "Apple", "Dreamworks" },{"Plastic", "Lood", "Tin", "Ijzer"} } ;
+        static int[] JuisteAntwoord = { 0, 1, 3, 1, 2 };
         static int index = 0;       
 
         static void Main(string[] args)
@@ -41,7 +41,7 @@ namespace Triviant
                             Console.WriteLine("Dat is helaas niet goed. Het antwoord is " + Antwoorden[index, JuisteAntwoord[index]]);
                             break;
                         case 99:
-                            Console.WriteLine("Dit is geen gelde invoer.");
+                            index=99;
                             break;
                     }
 
@@ -56,7 +56,7 @@ namespace Triviant
                 Console.WriteLine("Klik op enter om door te gaan");
 
                 Console.ReadLine();
-            } while (index < 4);
+            } while (index < 5);
             Console.WriteLine("Gefeliciteerd, u heeft de quiz uitgespeelt.");
             Console.WriteLine("En daarbij een score behaalt van " + Score + " punt(en).");
             Console.WriteLine("Goed gedaan!");
