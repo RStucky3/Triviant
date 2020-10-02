@@ -48,7 +48,7 @@ namespace Triviant
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
+                    Console.WriteLine("\n" + "Dit was geen correcte invoer");
                 }
 
                 index++;
@@ -100,7 +100,7 @@ namespace Triviant
             {
                 return 1;
             }
-            else if(Antw > 4)
+            else if(Antw == 99)
             {
                 return 99;
             }
