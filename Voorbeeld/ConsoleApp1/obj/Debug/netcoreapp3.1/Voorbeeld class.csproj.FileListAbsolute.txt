@@ -1,4 +1,0 @@
-C:\Users\Student.DESKTOP-NLE9OIH\Desktop\ICTP\Triviant\Triviant\Voorbeeld\ConsoleApp1\obj\Debug\netcoreapp3.1\Voorbeeld class.csprojAssemblyReference.cache
-C:\Users\Student.DESKTOP-NLE9OIH\Desktop\ICTP\Triviant\Triviant\Voorbeeld\ConsoleApp1\obj\Debug\netcoreapp3.1\Voorbeeld class.AssemblyInfoInputs.cache
-C:\Users\Student.DESKTOP-NLE9OIH\Desktop\ICTP\Triviant\Triviant\Voorbeeld\ConsoleApp1\obj\Debug\netcoreapp3.1\Voorbeeld class.AssemblyInfo.cs
-C:\Users\Student.DESKTOP-NLE9OIH\Desktop\ICTP\Triviant\Triviant\Voorbeeld\ConsoleApp1\obj\Debug\netcoreapp3.1\Voorbeeld class.csproj.CoreCompileInputs.cache
