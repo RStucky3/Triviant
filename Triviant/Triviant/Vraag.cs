@@ -11,6 +11,7 @@ namespace Triviant
         private string text;
         private string[] antwoorden = new string[4];
         private int antw;
+        private int punten;
         private int juisteAntwoord;
         private int categorie;
 
