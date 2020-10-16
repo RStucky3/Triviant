@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 using System.Reflection.PortableExecutable;
 using System.Runtime.InteropServices.ComTypes;
 
@@ -7,47 +8,61 @@ namespace Triviant
     class Program
     {
         static int Score = 0;
-        static int index = 0;
+        static int tel = 0;
         static void Main(string[] args)
         {
+            Dobbelsteen dobbelsteen = new Dobbelsteen();
 
             Console.WriteLine("Hello welkom bij Triviant!");
             Console.WriteLine("Hier word uw kennis getest.");
             Console.WriteLine("U krijgt vragen te zien en daarbij 4 antwoorden, kiest daarbij het beste antwoord.");
+            Console.WriteLine("");
+            Console.WriteLine("Klik op enter om de dobbelsteen te rollen!");
+            Console.ReadLine();
+            Console.WriteLine("U heeft " + dobbelsteen.Dobbel() + " gegooid");
             Console.WriteLine("Klik op enter om te beginnen!");
             Console.ReadLine();
+            Console.Clear();
 
 
-            int[] vraagantwoorden = { 1, 1, 3, 1, 2 };
 
             do
             { 
 
-            Vragen vraag = new Vragen();
+            Vraag vraag = new Vraag();
             vraag.setTekst(new string[] { "Wat is de naam van het tweede deel uit The Matrix trilogie?",
                                            "Welke actrice speelde Monica Gellar in de serie Friends?",
                                            "Voor welke inlichtingendienst was James Bond een werkzaam?",
                                            "Welk bedrijf maakte als eerst een volledige 3d-animatiefilm?",
-                                           "Uit welk materiaal bestaat een Oscar Award voor 92.5 %?" }, index);
+                                           "Uit welk materiaal bestaat een Oscar Award voor 92.5 %?" }, tel);
 
-            Vragen antwoorden1 = new Vragen();
-            antwoorden1.setAntwoorden(new string[,] { { "The Matrix Revolutions", "The Matrix Reloaded", "The Matrix", "The Real Matrix" }, 
+            vraag.setJuisteAntwoord(new int[] { 2, 2, 4, 2, 3 }, tel);
+           
+            vraag.setAntwoorden(new string[,] { { "The Matrix Revolutions", "The Matrix Reloaded", "The Matrix", "The Real Matrix" }, 
                                                         { "Jennifer Aniston", "Courteney Cox", "Lisa Kudrow", "David Schwimmer" }, 
                                                         { "CIA", "AIVD", "FBI", "MI6" }, 
                                                         { "Disney", "Pixar", "Apple", "Dreamworks" },
-                                                        { "Plastic", "Lood", "Tin", "Ijzer" } });
+                                                        { "Plastic", "Lood", "Tin", "Ijzer" } }, tel);
+
+
+
+
+
+
+
+
 
 
                 Console.WriteLine(vraag.getTekst());
 
 
                 int teller = 0;
-                string[,] antwoord = antwoorden1.getAntwoorden();
+                string[] antwoord = vraag.getAntwoorden();
                 for (int i = 0; i <= 3; i++)
                 {
                     teller++;
 
-                    Console.WriteLine(teller + ". " + antwoord[index, i]);
+                    Console.WriteLine(teller + ". " + antwoord[i]);
                 }
 
 
@@ -55,12 +70,19 @@ namespace Triviant
                 Console.WriteLine("");
                 Console.WriteLine("Type uw keuze: 1,2,3 of 4");
 
+   
 
-                Vragen antwoorden = new Vragen();
+                int controleinvoer = vraag.setGegevenAntwoord();
+                if ( controleinvoer == -1) {
 
-                int punten = antwoorden.setJuisteAntwoord(vraagantwoorden[index]);
+                    tel--;
+                    Console.ReadLine();
+                    Console.Clear();
 
+                }
+                else {
 
+                    int punten = vraag.checkJuisteAntwoord();
                     Console.WriteLine("");
                     switch (punten)
                     {
@@ -69,24 +91,22 @@ namespace Triviant
                             Score++;
                             break;
                         case 0:
-                            Console.WriteLine("Dat is helaas niet goed. Het antwoord is " + antwoord[index,vraagantwoorden[index]]);
+                            Console.WriteLine("Dat is helaas niet goed. Het antwoord is " + vraag.getJuisteAntwoord(tel));
                             break;
-                        case -1:
-                            index--;
-                            break;
-                        case 99:
-                            index = 99;
+                       case 99:
+                            tel = 99;
                             break;
                     }
 
-                Console.WriteLine("Je hebt " + Score + " punt(en).");
-                Console.WriteLine("Klik op enter om door te gaan");
-                Console.ReadLine();
-                Console.Clear();
+                    Console.WriteLine("Je hebt " + Score + " punt(en).");
+                    Console.WriteLine("Klik op enter om door te gaan");
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+                
+                tel++;
 
-                index++;
-
-            } while (index <= vraagantwoorden.Length-1);
+            } while (tel < 4);
 
             Console.WriteLine("Gefeliciteerd, u heeft de quiz uitgespeelt.");
             Console.WriteLine("En daarbij een score behaalt van " + Score + " punt(en).");
