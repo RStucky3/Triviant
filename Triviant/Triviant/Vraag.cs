@@ -53,7 +53,7 @@ namespace Triviant
                 int Antw = Convert.ToInt32(Console.ReadLine());
 
               
-                if (Antw > 4)
+                if (Antw > 4 || Antw < 1)
                 {
                     Console.WriteLine("\n" + "Dit was geen correcte invoer");
                     return -1;
