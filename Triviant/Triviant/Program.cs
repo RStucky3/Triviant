@@ -12,9 +12,8 @@ namespace Triviant
         static string[] categorieën = {"Film & TV", "Eten & Drinken", "Geschiedenis", "Muziek", "Nederland", "Sport" };
         static bool[] categorieGehad = { false, false, false, false, false, false };
         static int rondes = 0;
-        //alle readlines naar readkeys vervangen.
-        //netjes maken
-        //punten rechts boven constant laten staan
+        static int totaalScore = 0;
+
         static void Main(string[] args)
         {
             Dobbelsteen dobbelsteen = new Dobbelsteen();
@@ -157,10 +156,9 @@ namespace Triviant
 
 
 
-
-
-                    Console.WriteLine(vraag.getTekst());
-
+                    
+                    Console.WriteLine(vraag.getTekst()+"       punten: " + Score + "/" + totaalScore);
+                    totaalScore++;
 
                     int teller = 0;
                     string[] antwoord = vraag.getAntwoorden();
