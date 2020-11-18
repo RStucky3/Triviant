@@ -12,6 +12,9 @@ namespace Triviant
         static string[] categorieën = {"Film & TV", "Eten & Drinken", "Geschiedenis", "Muziek", "Nederland", "Sport" };
         static bool[] categorieGehad = { false, false, false, false, false, false };
         static int rondes = 0;
+        //alle readlines naar readkeys vervangen.
+        //netjes maken
+        //punten rechts boven constant laten staan
         static void Main(string[] args)
         {
             Dobbelsteen dobbelsteen = new Dobbelsteen();
