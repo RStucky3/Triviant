@@ -32,7 +32,7 @@ namespace Triviant
             Console.ReadKey();
             int categorienum = dobbelsteen.Dobbel();
             categorieGehad[categorienum-1] = true;
-            Console.WriteLine("U heeft " + categorienum + " gegooid!");
+            Console.WriteLine("\nU heeft " + categorienum + " gegooid!");
             Console.WriteLine("\n"+ "De categorie wordt " + categorieën[categorienum-1] + ".");
             Console.WriteLine("\n" + "Klik op een knop om te beginnen!");
             Console.ReadKey();
@@ -215,12 +215,30 @@ namespace Triviant
 
                 } while (tel < 5);
 
-                if (rondes < categorieën.Length)
+                if (rondes < categorieën.Length-1)
                 {
-
-
-                    Console.WriteLine("\n" + "Klik op een knop om de dobbelsteen te rollen!");
+                    int nogTeGaan = 0;
+                    for(int i = 0; i<categorieGehad.Length; i++)
+                    {
+                        if (categorieGehad[i] == false)
+                        {
+                            nogTeGaan++;
+                        }
+                    }
+                    Console.WriteLine("\n" + "Dit was de categorie " + categorieën[categorienum-1] + ".");
+                    Console.WriteLine("\nEr zijn nog " + nogTeGaan + " categorieën over.");
+                    Console.WriteLine("Dit zijn:");
+                    for(int i = 0; i<categorieën.Length; i++)
+                    {
+                        if (categorieGehad[i] == false)
+                        {
+                            Console.WriteLine(i+1 + ". " + categorieën[i]);
+                        }
+                    }
+                    Console.WriteLine("\n" + "Klik op een knop om de dobbelsteen opnieuw te rollen!");
+                    Console.WriteLine("");
                     Console.ReadKey();
+
 
                     bool herhaal = true;
 
@@ -243,9 +261,10 @@ namespace Triviant
                     Console.WriteLine("\n" + "Klik op een knop om te beginnen!");
                     Console.ReadKey();
                     Console.Clear();
-                    rondes++;
-                    tel = 0;
+                                     
                 }
+                rondes++;
+                tel = 0;
             }
             while (rondes<categorieën.Length);
 
