@@ -16,6 +16,9 @@ namespace Triviant
 
         static void Main(string[] args)
         {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Clear();
             Dobbelsteen dobbelsteen = new Dobbelsteen();
 
             Console.WriteLine("Hello welkom bij Triviant!");
@@ -30,13 +33,13 @@ namespace Triviant
 
                 Console.WriteLine(num + ". " + categorieën[i]);
             }
-            Console.WriteLine("\n" + "Klik op een knop om de dobbelsteen te rollen!");
+            WriteRedLine("\nKlik op een knop om de dobbelsteen te rollen!");
             Console.ReadKey();
             int categorienum = dobbelsteen.Dobbel();
             categorieGehad[categorienum-1] = true;
             Console.WriteLine("\nU heeft " + categorienum + " gegooid!");
-            Console.WriteLine("\n"+ "De categorie wordt " + categorieën[categorienum-1] + ".");
-            Console.WriteLine("\n" + "Klik op een knop om te beginnen!");
+            Console.WriteLine("\nDe categorie wordt " + categorieën[categorienum-1] + ".");
+            WriteRedLine("\nKlik op een knop om te beginnen!");
             Console.ReadKey();
             Console.Clear();
 
@@ -156,10 +159,10 @@ namespace Triviant
 
 
 
-                    
+                    //Laat de vraag zien met daarbij het aantal behaalde punten en het het maxiamaal mogelijk aantal punten op dat moment
                     Console.WriteLine(vraag.getTekst()+"       punten: " + Score + "/" + totaalScore);
-                    totaalScore++;
-
+                    
+                    //laat de mogelijke antwoorden zien
                     int teller = 0;
                     string[] antwoord = vraag.getAntwoorden();
                     for (int i = 0; i <= 3; i++)
@@ -172,11 +175,12 @@ namespace Triviant
 
 
                     Console.WriteLine("");
-                    Console.WriteLine("Type uw keuze: 1,2,3 of 4");
+                    WriteRedLine("Type uw keuze: 1,2,3 of 4");
 
 
-
+                    //controleert of de invoer goed is
                     int controleinvoer = vraag.setGegevenAntwoord();
+                    //zo niet keert hij terug naar de vraag die fout is gegaan
                     if (controleinvoer == -1) {
 
                         tel--;
@@ -185,7 +189,7 @@ namespace Triviant
 
                     }
                     else {
-
+                        //zo wel gaat hij kijken of het antwoord goed of fout is
                         int punten = vraag.checkJuisteAntwoord();
                         Console.WriteLine("");
                         switch (punten)
@@ -193,9 +197,11 @@ namespace Triviant
                             case 1:
                                 Console.WriteLine("Goed gedaan");
                                 Score++;
+                                totaalScore++;
                                 break;
                             case 0:
                                 Console.WriteLine("Dat is helaas niet goed. Het antwoord is " + vraag.getJuisteAntwoord(tel));
+                                totaalScore++;
                                 break;
                             case 99:
                                 tel = 99;
@@ -203,22 +209,25 @@ namespace Triviant
                         }
 
                         Console.WriteLine("Je hebt " + Score + " punt(en).");
-                        Console.WriteLine("Klik op enter om door te gaan");
+                        WriteRedLine("Klik op enter om door te gaan");
                         Console.ReadLine();
                         Console.Clear();
                     }
 
                     if (tel < 5)
                     {
+                        //vraagnummer
                         tel++;
                     }
                     
-
+                    //na 5 vragen gaat hij verder
                 } while (tel < 5);
 
+                //als het aantal rondes minder is dan het aantal categorieën die er zijn gaat hij een nieuwe categorie kiezen
                 if (rondes < categorieën.Length-1)
                 {
                     int nogTeGaan = 0;
+                    //er word gekeken hoeveel categorieën er nog over zijn
                     for(int i = 0; i<categorieGehad.Length; i++)
                     {
                         if (categorieGehad[i] == false)
@@ -226,9 +235,19 @@ namespace Triviant
                             nogTeGaan++;
                         }
                     }
-                    Console.WriteLine("\n" + "Dit was de categorie " + categorieën[categorienum-1] + ".");
-                    Console.WriteLine("\nEr zijn nog " + nogTeGaan + " categorieën over.");
-                    Console.WriteLine("Dit zijn:");
+                    Console.WriteLine("Dit was de categorie " + categorieën[categorienum-1] + ".");
+                    if (nogTeGaan > 1)
+                    {
+                        Console.WriteLine("\nEr zijn nog " + nogTeGaan + " categorieën over.");
+                        Console.WriteLine("Dit zijn:");
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nEr is nog maar één categorie over.");
+                        Console.WriteLine("Dit is:");
+                    }
+
+                    //de console laat alleen de categorieën zien die nog niet zijn geweest
                     for(int i = 0; i<categorieën.Length; i++)
                     {
                         if (categorieGehad[i] == false)
@@ -236,13 +255,22 @@ namespace Triviant
                             Console.WriteLine(i+1 + ". " + categorieën[i]);
                         }
                     }
-                    Console.WriteLine("\n" + "Klik op een knop om de dobbelsteen opnieuw te rollen!");
+                    if (nogTeGaan > 1)
+                    {
+                        WriteRedLine("\nKlik op een knop om de dobbelsteen opnieuw te rollen!");
+                    }
+                    else
+                    {
+                        WriteRedLine("\nKlik op een knop om te beginnen aan de laatste categorie!");
+                    }
+                    
                     Console.WriteLine("");
                     Console.ReadKey();
 
 
                     bool herhaal = true;
 
+                    //er word net zo lang naar een categorie gezocht, totdat er een word gevonden die nog niet is geweest
                     while (herhaal == true)
                     {
                         categorienum = dobbelsteen.Dobbel();
@@ -257,23 +285,40 @@ namespace Triviant
                             herhaal = true;                     
                         }
                     }
-                    Console.WriteLine("U heeft " + categorienum + " gegooid!");
-                    Console.WriteLine("\n" + "De categorie wordt " + categorieën[categorienum - 1] + ".");
-                    Console.WriteLine("\n" + "Klik op een knop om te beginnen!");
-                    Console.ReadKey();
+
+                    if (nogTeGaan > 1)
+                    {
+                        Console.WriteLine($"U heeft { categorienum } gegooid!");
+                        Console.WriteLine("\nDe categorie wordt " + categorieën[categorienum - 1] + ".");
+                        WriteRedLine("\nKlik op een knop om te beginnen!");
+                        Console.ReadKey();
+                    }
+                    
                     Console.Clear();
                                      
                 }
                 rondes++;
                 tel = 0;
             }
-            while (rondes<categorieën.Length);
+            while (rondes<categorieën.Length); //net zoveel rondes als categorieën
 
             Console.WriteLine("Gefeliciteerd, u heeft de quiz uitgespeelt.");
             Console.WriteLine("En daarbij een score behaalt van " + Score + " punt(en).");
             Console.WriteLine("Goed gedaan!");
             Console.ReadLine();
 
-        } } }
+        }
+
+        static void WriteRedLine(string value)
+        {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(value.PadRight(Console.WindowWidth - 1));
+            // Reset the color.
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+        }
+    } 
+}
 
 

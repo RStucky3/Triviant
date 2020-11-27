@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ICTP\\Triviant\\Triviant\\Triviant\\Triviant.csproj": {}
+    "C:\\Users\\Student.DESKTOP-NLE9OIH\\Desktop\\ICTP\\Triviant\\Triviant\\Triviant\\Triviant\\Triviant.csproj": {}
   },
   "projects": {
-    "E:\\ICTP\\Triviant\\Triviant\\Triviant\\Triviant.csproj": {
+    "C:\\Users\\Student.DESKTOP-NLE9OIH\\Desktop\\ICTP\\Triviant\\Triviant\\Triviant\\Triviant\\Triviant.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ICTP\\Triviant\\Triviant\\Triviant\\Triviant.csproj",
+        "projectUniqueName": "C:\\Users\\Student.DESKTOP-NLE9OIH\\Desktop\\ICTP\\Triviant\\Triviant\\Triviant\\Triviant\\Triviant.csproj",
         "projectName": "Triviant",
-        "projectPath": "E:\\ICTP\\Triviant\\Triviant\\Triviant\\Triviant.csproj",
-        "packagesPath": "C:\\Users\\ruben\\.nuget\\packages\\",
-        "outputPath": "E:\\ICTP\\Triviant\\Triviant\\Triviant\\obj\\",
+        "projectPath": "C:\\Users\\Student.DESKTOP-NLE9OIH\\Desktop\\ICTP\\Triviant\\Triviant\\Triviant\\Triviant\\Triviant.csproj",
+        "packagesPath": "C:\\Users\\Student.DESKTOP-NLE9OIH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Student.DESKTOP-NLE9OIH\\Desktop\\ICTP\\Triviant\\Triviant\\Triviant\\Triviant\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ruben\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Student.DESKTOP-NLE9OIH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -54,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
