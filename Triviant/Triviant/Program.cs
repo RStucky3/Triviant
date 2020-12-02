@@ -205,6 +205,7 @@ namespace Triviant
                                 break;
                             case 99:
                                 tel = 99;
+                                rondes = 99;
                                 break;
                         }
 
@@ -280,8 +281,7 @@ namespace Triviant
                             herhaal = false;
                         }
                         else
-                        {
-                            
+                        {                           
                             herhaal = true;                     
                         }
                     }

@@ -52,10 +52,14 @@ namespace Triviant
             {
                 int Antw = Convert.ToInt32(Console.ReadLine());
 
-              
-                if (Antw > 4 || Antw < 1)
+                if (Antw == 99)
                 {
-                    Console.WriteLine("\n" + "Dit was geen correcte invoer");
+                    this.antw = Antw;
+                    return 99;
+                }
+                else if (Antw > 4 || Antw < 1)
+                {
+                    Console.WriteLine("\n" + "Dit was geen corretecte invoer");
                     return -1;
                 }
                 else
@@ -80,7 +84,7 @@ namespace Triviant
             {
                 return punten = 1;
             }
-            else if (this.juisteAntwoord == 99)
+            else if (this.antw == 99)
             {
                 return punten = 99;
             }
